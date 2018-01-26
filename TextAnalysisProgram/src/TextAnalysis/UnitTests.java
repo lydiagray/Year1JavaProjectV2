@@ -32,6 +32,28 @@ class UnitTests {
             return false;
         }
     }
+    
+    public static boolean compareTwoArrays(double[] arrayOne, double[] arrayTwo) {             
+        boolean equalOrNot = true;
+         
+        if(arrayOne.length == arrayTwo.length) {
+            for (int i = 0; i < arrayOne.length; i++) {
+                if(arrayOne[i] != arrayTwo[i]) {
+                    equalOrNot = false;
+                }
+            }
+        }
+        else {
+        	equalOrNot = false;
+        }
+         
+        if (equalOrNot) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 	
 	@Test
 	public void characterCount_ShouldReturnCorrectCharacterCountForOneLetter_LongString() {
@@ -120,6 +142,42 @@ class UnitTests {
 		Assert.assertEquals(compareTwoArrays(expectedArray, resultArray), true);
 		
 	}
+	
+	@Test
+	public void numberOfSpaces_ShouldReturnCorrectNumberOfSpacesForShortString() {
+		int expectedResult = 10;
+		int result = TextAnalysis.numberOfSpaces(shortString);
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void numberOfSpaces_ShouldReturnCorrectNumberOfSpacesForLongString() {
+		int expectedResult = 110;
+		int result = TextAnalysis.numberOfSpaces(longString);
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+//	@Test
+//	public void relativeFrequency_ShouldReturnCorrectArrayForShortString() {
+//		float[] expectedArray = {0.04,0,0,0,0,0,0.02,0.122,0.122,0,0,0,0,0.02,0.02,0,0,0.04,0.142,0.122,0,0,0.04,0,0.02,0, 0, 0, 0.02, 0, 0,0.61,0.02, 0, 0.04,0.02,0.02,0.02,0.02, 0, 0, 0, 0, 0,0.02,0.02, 0, 0, 0, 0};
+//		
+//		float[] resultArray = TextAnalysis.relativeFrequency(TextAnalysis.characterFrequency(shortString, TextAnalysis.characterArray), (shortString.length() - TextAnalysis.numberOfSpaces(shortString)));
+//		
+//		
+//		Assert.assertEquals(compareTwoArrays(expectedArray, resultArray), true);
+//		
+//	}
+	
+//	@Test
+//	public void relativeFrequency_ShouldReturnCorrectArrayForLongString() {
+//		double[] expectedArray = {31,10,13,18,56,7,13,31,40,0,6,10,3,34,35,10,0,27,32,39,11,5,14,0,8,0, 2, 0, 0, 1, 0, 1, 2, 1, 0, 1, 9, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0};
+//		
+//		double[] resultArray = TextAnalysis.characterFrequency(longString, TextAnalysis.characterArray);
+//		
+//		
+//		Assert.assertEquals(compareTwoArrays(expectedArray, resultArray), true);
+//		
+//	}
 	
 	
 }

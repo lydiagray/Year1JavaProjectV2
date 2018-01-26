@@ -19,8 +19,16 @@ public class Main {
 			System.out.println("Demo display of frequencies for the following text:" + UnitTests.longString);	
 //			TextAnalysis.displayFrequencies(TextAnalysis.characterFrequency(UnitTests.longString, TextAnalysis.characterArray), TextAnalysis.characterArray);
 //			TextAnalysis.barChartFrequencies(TextAnalysis.characterFrequency(UnitTests.longString, TextAnalysis.characterArray), TextAnalysis.characterArray);
-			TextAnalysis.displayFrequencies(TextAnalysis.characterFrequency(UnitTests.shortString, TextAnalysis.characterArray), TextAnalysis.characterArray);
-			TextAnalysis.barChartFrequencies(TextAnalysis.characterFrequency(UnitTests.shortString, TextAnalysis.characterArray), TextAnalysis.characterArray);		
+//			TextAnalysis.displayFrequencies(TextAnalysis.characterFrequency(UnitTests.shortString, TextAnalysis.characterArray), TextAnalysis.characterArray);
+//			TextAnalysis.barChartFrequencies(TextAnalysis.characterFrequency(UnitTests.shortString, TextAnalysis.characterArray), TextAnalysis.characterArray);	
+			int[] characterFrequency = TextAnalysis.characterFrequency(UnitTests.shortString, TextAnalysis.characterArray);
+			
+			double[] array = TextAnalysis.relativeFrequency(characterFrequency, 49 );
+			for (int i = 0; i < array.length; i++) {
+				System.out.print(characterFrequency[i]);
+				System.out.println("                " + array[i]);
+//				System.out.println(UnitTests.longString.length());
+			}
 		}
 		else if (programMode == 0) {
 			System.out.println("Thank you for using the LG Text Analysis Program\r\nGoodbye");

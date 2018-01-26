@@ -3,37 +3,51 @@ package TextAnalysis;
 public class TextAnalysis {
 	
 	//Attributes
-	private String input;
-	private int charsIncludingSpaces;
-	private int charsExcludingSpaces;
-	private int numberOfWords;
-	private int[] characterFrequency;
-	private int[] relativeFrequency;
+	public static String input;
+	public static char[] inputAsArray;
+	public static int numberOfSpaces;
+	public static int charsIncludingSpaces;
+	public static int charsExcludingSpaces;
+	public static int numberOfWords;
+	public static int[] characterFrequency;
+	public static double[] relativeFrequency;
 	public static final char[] characterArray = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', ',', '!', '?', ':', ';', '"','\'', '&', '(', ')', '-', '@', '\\', '/'};
 	
 	
 	//Constructor
-	public TextAnalysis(String input) {
-		this.input = input.toUpperCase();
-		this.charsIncludingSpaces = method();
-		this.charsExcludingSpaces = method();
-		this.numberOfWords = method();
-		this.characterFrequency = characterFrequency(input, characterArray);
-		this.relativeFrequency = relativeFrequency(characterFrequency, charsExcludingSpaces);
+	public TextAnalysis(String userInput) {
+		TextAnalysis.input = userInput.toUpperCase();
+		TextAnalysis.inputAsArray = input.toCharArray();
+		TextAnalysis.numberOfSpaces = numberOfSpaces(input);
+		TextAnalysis.charsIncludingSpaces = inputAsArray.length;
+		TextAnalysis.charsExcludingSpaces = charsIncludingSpaces - numberOfSpaces;
+		TextAnalysis.numberOfWords = numberOfSpaces + 1;
+		TextAnalysis.characterFrequency = characterFrequency(input, characterArray);
+		TextAnalysis.relativeFrequency = relativeFrequency(characterFrequency, charsExcludingSpaces);
 	}
 	
 	
 	//Methods
 	//Get methods
-	public String getInput() {return input;}
-	public int getCharsIncludingSpaces() {return charsIncludingSpaces;}
-	public int getCharsExcludingSpaces() {return charsExcludingSpaces;}
-	public int getNumberOfWords() {return numberOfWords;}
-	public int[] getCharacterFrequency() {return characterFrequency;}
-	public int[] getRelativeFrequency() {return relativeFrequency;}
+	public static String getInput() {return input;}
+	public static int getNumberOfSpaces() {return numberOfSpaces;}
+	public static int getCharsIncludingSpaces() {return charsIncludingSpaces;}
+	public static int getCharsExcludingSpaces() {return charsExcludingSpaces;}
+	public static int getNumberOfWords() {return numberOfWords;}
+	public static int[] getCharacterFrequency() {return characterFrequency;}
+	public static double[] getRelativeFrequency() {return relativeFrequency;}
 	
 	//Analysis methods
 	
+	public static int numberOfSpaces(String input) {
+		int count = 0;
+		for (char c : input.toCharArray()) {
+			if (c == ' ') {
+				count++;
+			}
+		}
+		return count;
+	}
 	
 	public static int countCharacters(String input, char character) {
 		char[] charArray = input.toCharArray();
@@ -54,6 +68,18 @@ public class TextAnalysis {
 			frequencyValues[i] = countCharacters(str, characterArray[i]); 
 		}		
 		return frequencyValues;
+	}
+	
+	public static double[] relativeFrequency(int[] characterFrequency, int length) {
+		double[] relativeFrequency = new double[50];
+		double[] characterFrequencyFloat = new double[50];
+		for (int i = 0; i < characterFrequency.length; i++) {
+			characterFrequencyFloat[i] = characterFrequency[i];
+		}
+		for (int i = 0; i < characterFrequency.length; i++) {
+			relativeFrequency[i] = (characterFrequencyFloat[i] / length);
+		}
+		return relativeFrequency;
 	}
 	
 	//Display methods
