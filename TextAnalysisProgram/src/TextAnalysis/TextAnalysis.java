@@ -83,6 +83,10 @@ public class TextAnalysis {
 	}
 	
 	//Display methods
+	
+	public String toString() {
+		return "The text you are analysing is :" + input + "\nIt contains " + numberOfWords + " words and " + numberOfSpaces + " spaces.\nIncluding spaces it is " + charsIncludingSpaces + " characters long, and without spaces it is " + charsExcludingSpaces + " characters long.";
+	}
 	public static void displayFrequencies(int[] characterFrequency, char[] characterArray) {
 		System.out.format("+---------+---------+\r\n");
 		System.out.format("|Character|Frequency|\r\n");
