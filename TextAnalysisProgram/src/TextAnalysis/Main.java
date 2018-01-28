@@ -20,13 +20,10 @@ public class Main {
 				System.out.println("How would you like to enter your text?\n1: Keyboard\n2: Import a .txt file\nTo return to the main menu press 0");
 				Scanner scan = new Scanner(System.in);
 				inputType = scan.nextInt();
-	
 					if (inputType == 1) {
 						System.out.println("Please enter the text you would like to analyse:");
 						Scanner textScanner = new Scanner(System.in);
-						String keyboardInput = textScanner.nextLine();
-						input = keyboardInput;
-						textScanner.close();
+						input = textScanner.nextLine();
 					}
 					else if(inputType == 2) {
 						System.out.println("Please enter the full location of the .txt file including the path e.g. C/code/text.txt:");
@@ -38,7 +35,6 @@ public class Main {
 							// TODO Auto-generated catch block
 							e.printStackTrace();
 						}
-						locationScanner.close();
 					}
 				
 						else if (inputType > 2) {
@@ -65,10 +61,11 @@ public class Main {
 			else {
 				System.out.println("You must select 1, 2 or 0");
 			}
-			System.out.println("Welcome to the LG Text Analysis Program\r\n\r\nPlease select the mode you would like to use?");
+			
+			System.out.println("\r\n\r\nPlease select the mode you would like to use?");
 			System.out.println("1: Full mode\r\n2: Demo mode\r\nTo exit the program enter 0");
 		} while (programMode != 0);
-
+		
 	}
 
 }

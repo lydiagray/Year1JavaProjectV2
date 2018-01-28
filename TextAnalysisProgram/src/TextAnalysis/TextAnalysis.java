@@ -109,7 +109,7 @@ public class TextAnalysis {
 	//Display methods
 	
 	public String toString() {
-		return "The text you are analysing is :" + input + "\nIt contains " + numberOfWords + " words and " + numberOfSpaces + " spaces.\nIncluding spaces it is " + charsIncludingSpaces + " characters long, and without spaces it is " + charsExcludingSpaces + " characters long.";
+		return "\nThe text you are analysing is :\n\n" + input + "\n\nIt contains " + numberOfWords + " words and " + numberOfSpaces + " spaces.\nIncluding spaces it is " + charsIncludingSpaces + " characters long, and without spaces it is " + charsExcludingSpaces + " characters long.\n";
 	}
 	public void displayFrequencies(int[] characterFrequency, char[] characterArray, String[] relativeFrequency) {
 		System.out.format("+---------+---------+---------+\r\n");
@@ -120,11 +120,38 @@ public class TextAnalysis {
 			System.out.format("| %-7s | %-7s | %-7s |\r\n", characterArray[i], characterFrequency[i], relativeFrequency[i]);
 		}
 		System.out.format("+---------+---------+---------+\r\n");
+		
+		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
+		System.out.print("|Character|");
+		for (int i = 0; i < characterFrequency.length; i++) {
+			System.out.format("%-5s|", characterArray[i]);
+		}
+		System.out.println("");
+		System.out.println("|         |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |");
+		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
+		
+		System.out.print("|Character|");
+		for (int i = 0; i < characterFrequency.length; i++) {
+			System.out.format("%-5s|", characterFrequency[i]);
+		}
+		System.out.println("");
+		System.out.println("|Frequency|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |");
+		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
+		
+		System.out.print("|Relative |");
+		for (int i = 0; i < characterFrequency.length; i++) {
+			System.out.format("%-5s|", relativeFrequency[i]);
+		}
+		System.out.println("");
+		System.out.println("|Frequency|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |");
+		
+		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\r\n");
+		
 	}
 	
 	public void barChartFrequencies(int[] characterFrequency, char[] characterArray, int count) {
 	
-		System.out.println(" Number of character occurances");
+		System.out.println("\n Number of character occurances");
 
 		for (int i = count; i > 0; i--) {
 			if (i < 10) {
@@ -151,7 +178,7 @@ public class TextAnalysis {
 		for (int i = 0; i < characterArray.length; i++) {
 			System.out.print(characterArray[i] + " ");
 		}
-		System.out.println("");
+		System.out.println("\n");
 
 
 	}
