@@ -26,7 +26,7 @@ public class Main {
 						input = textScanner.nextLine();
 					}
 					else if(inputType == 2) {
-						System.out.println("Please enter the full location of the .txt file including the path e.g. C/code/text.txt:");
+						System.out.println("Please enter the full location of the .txt file including the path e.g. C\\code\\text.txt:");
 						Scanner locationScanner = new Scanner(System.in);
 						String location = locationScanner.nextLine();
 						try {

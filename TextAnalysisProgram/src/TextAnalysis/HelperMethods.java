@@ -11,7 +11,6 @@ public class HelperMethods {
 		while (scanner.hasNextLine()) {
 			textFromFile += scanner.nextLine();
 		}
-		scanner.close();
 		return textFromFile;
 	}
 
