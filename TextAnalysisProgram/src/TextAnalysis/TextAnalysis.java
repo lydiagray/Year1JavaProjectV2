@@ -153,59 +153,178 @@ public class TextAnalysis {
 	}
 	public void displayFrequencies(int[] characterFrequency, char[] characterArray, String[] relativeFrequency) {
 		//Part 1
-		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
+		System.out.print("+---------+");
+		for (int i = 0; i < 26; i++) {
+			if (i != 26) {
+				System.out.print("-----+");
+			}
+			else {
+				System.out.print("-----+");
+			}
+		}
+		System.out.println("");
 		System.out.print("|Character|");
 		for (int i = 0; i < 26; i++) {
 			System.out.format("%-5s|", characterArray[i]);
 		}
 		System.out.println("");
-		System.out.println("|         |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |");
-		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
-		
+		System.out.print("|         |");
+		for (int i = 0; i < 26; i++) {
+			if (i != 26) {
+				System.out.print("     |");
+			}
+			else {
+				System.out.println("     |");
+			}
+		}
+		System.out.println("");
+		System.out.print("+---------+");
+		for (int i = 0; i < 26; i++) {
+			if (i != 26) {
+				System.out.print("-----+");
+			}
+			else {
+				System.out.println("-----+");
+			}
+		}
+		System.out.println("");		
 		System.out.print("|Character|");
 		for (int i = 0; i < 26; i++) {
 			System.out.format("%-5s|", characterFrequency[i]);
 		}
 		System.out.println("");
-		System.out.println("|Frequency|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |");
-		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
-		
+		System.out.print("|Frequency|");
+		for (int i = 0; i < 26; i++) {
+			if (i != 26) {
+				System.out.print("     |");
+			}
+			else {
+				System.out.println("     |");
+			}
+		}
+		System.out.println("");
+		System.out.print("+---------+");
+		for (int i = 0; i < 26; i++) {
+			if (i != 26) {
+				System.out.print("-----+");
+			}
+			else {
+				System.out.println("-----+");
+			}
+		}
+		System.out.println("");		
 		System.out.print("|Relative |");
 		for (int i = 0; i < 26; i++) {
 			System.out.format("%-5s|", relativeFrequency[i]);
 		}
 		System.out.println("");
-		System.out.println("|Frequency|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |");
-		
-		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\r\n");
+		System.out.print("|Frequency|");
+		for (int i = 0; i < 26; i++) {
+			if (i != 26) {
+				System.out.print("     |");
+			}
+			else {
+				System.out.println("     |");
+			}
+		}
+		System.out.println("");
+		System.out.print("+---------+");
+		for (int i = 0; i < 26; i++) {
+			if (i != 26) {
+				System.out.print("-----+");
+			}
+			else {
+				System.out.println("-----+");
+			}
+		}
+		System.out.println("");
 		
 		//Part 2
-		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
+		System.out.print("+---------+");
+		for (int i = 26; i < 50; i++) {
+			if (i != 50) {
+				System.out.print("-----+");
+			}
+			else {
+				System.out.println("-----+");
+			}
+		}
+		System.out.println("");
 		System.out.print("|Character|");
 		for (int i = 26; i < 50; i++) {
 			System.out.format("%-5s|", characterArray[i]);
 		}
 		System.out.println("");
-		System.out.println("|         |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |");
-		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
-		
+		System.out.print("|         |");
+		for (int i = 26; i < 50; i++) {
+			if (i != 50) {
+				System.out.print("     |");
+			}
+			else {
+				System.out.println("     |");
+			}
+		}
+		System.out.println("");
+		System.out.print("+---------+");
+		for (int i = 26; i < 50; i++) {
+			if (i != 50) {
+				System.out.print("-----+");
+			}
+			else {
+				System.out.println("-----+");
+			}
+		}
+		System.out.println("");
 		System.out.print("|Character|");
 		for (int i = 26; i < 50; i++) {
 			System.out.format("%-5s|", characterFrequency[i]);
 		}
 		System.out.println("");
-		System.out.println("|Frequency|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |");
-		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
-		
+		System.out.print("|Frequency|");
+		for (int i = 26; i < 50; i++) {
+			if (i != 50) {
+				System.out.print("     |");
+			}
+			else {
+				System.out.println("     |");
+			}
+		}
+		System.out.println("");
+		System.out.print("+---------+");
+		for (int i = 26; i < 50; i++) {
+			if (i != 50) {
+				System.out.print("-----+");
+			}
+			else {
+				System.out.println("-----+");
+			}
+		}
+		System.out.println("");
 		System.out.print("|Relative |");
 		for (int i = 26; i < 50; i++) {
 			System.out.format("%-5s|", relativeFrequency[i]);
 		}
 		System.out.println("");
-		System.out.println("|Frequency|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |");
-		
-		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\r\n");
-		
+		System.out.print("|Frequency|");
+		for (int i = 26; i < 50; i++) {
+			if (i != 50) {
+				System.out.print("     |");
+			}
+			else {
+				System.out.println("     |");
+			}
+		}
+		System.out.println("");
+		System.out.print("+---------+");
+		for (int i = 26; i < 50; i++) {
+			if (i != 50) {
+				System.out.print("-----+");
+			}
+			else {
+				System.out.println("-----+");
+			}
+		}
+		System.out.println("");
 	}
 	
 	public void barChartFrequencies(int[] characterFrequency, char[] characterArray, int count) {
