@@ -152,15 +152,6 @@ public class TextAnalysis {
 				+ numberOfUnrecognisedCharacters + " characters were unrecognised by the program.\n";
 	}
 	public void displayFrequencies(int[] characterFrequency, char[] characterArray, String[] relativeFrequency) {
-//		System.out.format("+---------+---------+---------+\r\n");
-//		System.out.format("|Character|Character|Relative |\r\n");
-//		System.out.format("|         |Frequency|Frequency|\r\n");
-//		System.out.format("+---------+---------+---------+\r\n");
-//		for (int i = 0; i < characterFrequency.length; i++) {
-//			System.out.format("| %-7s | %-7s | %-7s |\r\n", characterArray[i], characterFrequency[i], relativeFrequency[i]);
-//		}
-//		System.out.format("+---------+---------+---------+\r\n");
-		
 		//Part 1
 		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
 		System.out.print("|Character|");
@@ -187,6 +178,7 @@ public class TextAnalysis {
 		System.out.println("|Frequency|     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |");
 		
 		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+\r\n");
+		
 		//Part 2
 		System.out.println("+---------+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+");
 		System.out.print("|Character|");

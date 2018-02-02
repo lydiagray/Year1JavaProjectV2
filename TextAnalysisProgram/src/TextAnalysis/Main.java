@@ -44,26 +44,6 @@ public class Main {
 				} while (inputType > 2);
 		    	TextAnalysis textAnalysis = new TextAnalysis(input);
 		    	HelperMethods.displayInterface(textAnalysis);
-//		    	int display = 1;
-//		    	do {
-//			    	System.out.println("What analysis would you like to see?\n\n1: Show all analysis\n2: Show basic analysis\n3: Show character frequency table\n4: Show character frequency bar chart\n0: Return to the main menu\n");
-//			    	display = sc.nextInt();
-//			    	if (display == 1) {
-//			    		HelperMethods.fullAnalysisDisplay(textAnalysis);
-//			    	}
-//			    	else if (display == 2) {
-//			    		System.out.println(textAnalysis.toString());
-//			    	}
-//			    	else if (display == 3) {
-//			    		textAnalysis.displayFrequencies(textAnalysis.getCharacterFrequency(), TextAnalysis.characterArray, textAnalysis.getRelativeFrequency());
-//			    	}
-//			    	else if (display == 4) {
-//			    		textAnalysis.barChartFrequencies(textAnalysis.characterFrequency, TextAnalysis.characterArray, textAnalysis.getHighestCount());
-//			    	}
-//			    	else if (display > 4) {
-//			    		System.out.println("You must enter 1, 2, 3, 4 or 0 only");
-//			    	}
-//		    	} while (display != 0);
 		    		
 			}
 			else if (programMode == 2) {
