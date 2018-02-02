@@ -6,63 +6,19 @@ import org.junit.jupiter.api.Test;
 
 class UnitTests {
 
-	private static String longStringLower = "1164778 Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, and where is the use of a book, thought Alice, without pictures or conversations? So she was considering in her own mind, (as well as she could, for the hot day made her feel very sleepy and stupid,) whether the pleasure of making a daisy-chain was worth the trouble of getting up and picking the daisies, when a white rabbit with pink eyes ran close by her.";
-	public static final String longString = longStringLower.toUpperCase();
-	private static String shortStringLower = "99037666 This! What is this? Why, this is a (short) string.";
-	public static final String shortString = shortStringLower.toUpperCase();
-	
-    public static boolean compareTwoArrays(int[] arrayOne, int[] arrayTwo) {             
-        boolean equalOrNot = true;
-         
-        if(arrayOne.length == arrayTwo.length) {
-            for (int i = 0; i < arrayOne.length; i++) {
-                if(arrayOne[i] != arrayTwo[i]) {
-                    equalOrNot = false;
-                }
-            }
-        }
-        else {
-        	equalOrNot = false;
-        }
-         
-        if (equalOrNot) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    
-    public static boolean compareTwoArrays(String[] arrayOne, String[] arrayTwo) {             
-        boolean equalOrNot = true;
-         
-        if(arrayOne.length == arrayTwo.length) {
-            for (int i = 0; i < arrayOne.length; i++) {
-                if(!arrayOne[i].equals(arrayTwo[i])) {
-                    equalOrNot = false;
-                }
-            }
-        }
-        else {
-        	equalOrNot = false;
-        }
-         
-        if (equalOrNot) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-	
+	public static final String longString = "1164778 Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, and where is the use of a book, thought Alice, without pictures or conversations? So she was considering in her own mind, (as well as she could, for the hot day made her feel very sleepy and stupid,) whether the pleasure of making a daisy-chain was worth the trouble of getting up and picking the daisies, when a white rabbit with pink eyes ran close by her.";
+	public static final String shortString = "99037666 This! What is this? Why, this is a (short) string.";
+	public static final String varietyString = "abc def ghi jkl mno pqrs tuv wxyz ABC DEF GHI JKL MNO PQRS TUV WXYZ !\"§ $%& /() =?* '<> #|; ²³~ @`´ ©«» ¤¼× {}abc def ghi";
+		
 	@Test
 	public void characterCount_ShouldReturnCorrectCharacterCountForOneLetter_LongString() {
 		// arrange
 		int expectedResult = 14; 
-		char character = 'W';
+		// character = 'W';
 		TextAnalysis testCase = new TextAnalysis(longString);
 		// act
-		int result = testCase.countCharacters(longString, character);		
+		int[] resultArray = testCase.getCharacterFrequency();
+		int result = resultArray[22];
 		// assert
 		Assert.assertEquals(expectedResult, result);
 	}
@@ -138,7 +94,7 @@ class UnitTests {
 		//act
 		int[] resultArray = testCase.getCharacterFrequency();
 		//assert		
-		Assert.assertEquals(compareTwoArrays(expectedArray, resultArray), true);
+		Assert.assertEquals(HelperMethods.compareTwoArrays(expectedArray, resultArray), true);
 	}
 	
 	@Test
@@ -149,7 +105,7 @@ class UnitTests {
 		//act
 		int[] resultArray = testCase.getCharacterFrequency();
 		//assert		
-		Assert.assertEquals(compareTwoArrays(expectedArray, resultArray), true);		
+		Assert.assertEquals(HelperMethods.compareTwoArrays(expectedArray, resultArray), true);		
 	}
 	
 	@Test
@@ -182,7 +138,7 @@ class UnitTests {
 		//act
 		String[] resultArray = testCase.getRelativeFrequency();
 		//assert		
-		Assert.assertEquals(compareTwoArrays(expectedArray, resultArray), true);
+		Assert.assertEquals(HelperMethods.compareTwoArrays(expectedArray, resultArray), true);
 		
 	}
 	
@@ -194,8 +150,95 @@ class UnitTests {
 		//act
 		String[] resultArray = testCase.getRelativeFrequency();
 		//assert		
-		Assert.assertEquals(compareTwoArrays(expectedArray, resultArray), true);		
+		Assert.assertEquals(HelperMethods.compareTwoArrays(expectedArray, resultArray), true);		
 	}
 	
+	@Test
+	public void highestCount_ShouldReturnHighestValueInFrequencyArrayForShortString() {
+		//arrange
+		int expectedResult = 7;
+		TextAnalysis testCase = new TextAnalysis(shortString);
+		//act
+		int result = testCase.getHighestCount();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void highestCount_ShouldReturnHighestValueInFrequencyArrayForLongString() {
+		//arrange
+		int expectedResult = 56;
+		TextAnalysis testCase = new TextAnalysis(longString);
+		//act
+		int result = testCase.getHighestCount();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void charsIncludingSpaces_ShouldReturnTotalLengthOfShortString() {
+		//arrange
+		int expectedResult = 59;
+		TextAnalysis testCase = new TextAnalysis(shortString);
+		//act
+		int result = testCase.getCharsIncludingSpaces();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void charsIncludingSpaces_ShouldReturnTotalLengthOfLongString() {
+		//arrange
+		int expectedResult = 585;
+		TextAnalysis testCase = new TextAnalysis(longString);
+		//act
+		int result = testCase.getCharsIncludingSpaces();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void charsExcludingSpaces_ShouldReturnTotalLengthOfShortString() {
+		//arrange
+		int expectedResult = 49;
+		TextAnalysis testCase = new TextAnalysis(shortString);
+		//act
+		int result = testCase.getCharsExcludingSpaces();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void charsExcludingSpaces_ShouldReturnTotalLengthOfLongString() {
+		//arrange
+		int expectedResult = 475;
+		TextAnalysis testCase = new TextAnalysis(longString);
+		//act
+		int result = testCase.getCharsExcludingSpaces();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void numberOfRecognisedCharacters() {
+		//arrange
+		int expectedResult = 71;
+		TextAnalysis testCase = new TextAnalysis(varietyString);
+		//act
+		int result = testCase.getNumberOfRecognisedCharacters();		
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void numberOfUnrecognisedCharacters() {
+		//arrange
+		int expectedResult = 22;
+		TextAnalysis testCase = new TextAnalysis(varietyString);
+		//act
+		int result = testCase.getNumberOfUnrecognisedCharacters();		
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
 	
 }
