@@ -30,7 +30,7 @@ class UnitTests {
 		char character = 'B';
 		TextAnalysis testCase = new TextAnalysis(shortString);
 		//act
-		int result = testCase.countCharacters(shortString, character);
+		int result = testCase.countCharacters(shortString.toCharArray(), character);
 		//assert
 		Assert.assertEquals(expectedResult, result);
 		
@@ -43,7 +43,7 @@ class UnitTests {
 		char character = ',';
 		TextAnalysis testCase = new TextAnalysis(longString);
 		//act
-		int result = testCase.countCharacters(longString, character);
+		int result = testCase.countCharacters(longString.toCharArray(), character);
 		//assert
 		Assert.assertEquals(expectedResult, result);
 		
@@ -56,7 +56,7 @@ class UnitTests {
 		char character = '-';
 		TextAnalysis testCase = new TextAnalysis(shortString);
 		//act
-		int result = testCase.countCharacters(shortString, character);
+		int result = testCase.countCharacters(shortString.toCharArray(), character);
 		//assert
 		Assert.assertEquals(expectedResult, result);
 		
@@ -69,7 +69,7 @@ class UnitTests {
 		char character = '7';
 		TextAnalysis testCase = new TextAnalysis(longString);
 		//act
-		int result = testCase.countCharacters(longString, character);
+		int result = testCase.countCharacters(longString.toCharArray(), character);
 		//assert
 		Assert.assertEquals(expectedResult, result);		
 	}
@@ -81,7 +81,7 @@ class UnitTests {
 		char character = '6';
 		TextAnalysis testCase = new TextAnalysis(shortString);
 		//act
-		int result = testCase.countCharacters(shortString, character);
+		int result = testCase.countCharacters(shortString.toCharArray(), character);
 		//assert
 		Assert.assertEquals(expectedResult, result);		
 	}
@@ -89,7 +89,7 @@ class UnitTests {
 	@Test
 	public void letterFrequencies_ShouldReturnCorrectArrayForShortString() {
 		//arrange
-		int[] expectedArray = {2,0,0,0,0,0,1,6,6,0,0,0,0,1,1,0,0,2,7,6,0,0,2,0,1,0, 0, 0, 1, 0, 0, 3, 1, 0, 2, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0};
+		int[] expectedArray = {2,0,0,0,0,0,1,6,6,0,0,0,0,1,1,0,0,2,7,6,0,0,2,0,1,0,1,0,0,1,0,0,3,1,0,2,1,1,1,1,0,0,0,0,0,1,1,0,0,0,0};
 		TextAnalysis testCase = new TextAnalysis(shortString);
 		//act
 		int[] resultArray = testCase.getCharacterFrequency();
@@ -100,7 +100,7 @@ class UnitTests {
 	@Test
 	public void letterFrequencies_ShouldReturnCorrectArrayForLongString() {
 		//arrange
-		int[] expectedArray = {31,10,13,18,56,7,13,31,40,0,6,10,3,34,35,10,0,27,32,39,11,5,14,0,8,0, 2, 0, 0, 1, 0, 1, 2, 1, 0, 1, 9, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0};
+		int[] expectedArray = {31,10,13,18,56,7,13,31,40,0,6,10,3,34,35,10,0,27,32,39,11,5,14,0,8,0,0,2,0,0,1,0,1,2,1,0,1,9,0,1,1,0,0,0,0,1,1,1,0,0,0};
 		TextAnalysis testCase = new TextAnalysis(longString);
 		//act
 		int[] resultArray = testCase.getCharacterFrequency();
@@ -133,7 +133,7 @@ class UnitTests {
 	@Test
 	public void relativeFrequency_ShouldReturnCorrectArrayForShortString() {
 		//arrange
-		String[] expectedArray = {"0.041","0","0","0","0","0","0.021","0.123","0.123","0","0","0","0","0.021","0.021","0","0","0.041","0.143","0.123","0","0","0.041","0","0.021","0","0","0","0.021","0","0","0.062","0.021","0","0.041","0.021","0.021","0.021","0.021","0","0","0","0","0","0.021","0.021","0","0","0","0"};
+		String[] expectedArray = {"0.041","0","0","0","0","0","0.021","0.123","0.123","0","0","0","0","0.021","0.021","0","0","0.041","0.143","0.123","0","0","0.041","0","0.021","0","0.021","0","0","0.021","0","0","0.062","0.021","0","0.041","0.021","0.021","0.021","0.021","0","0","0","0","0","0.021","0.021","0","0","0","0"};
 		TextAnalysis testCase = new TextAnalysis(shortString);
 		//act
 		String[] resultArray = testCase.getRelativeFrequency();
@@ -145,7 +145,7 @@ class UnitTests {
 	@Test
 	public void relativeFrequency_ShouldReturnCorrectArrayForLongString() {
 		//arrange
-		String[] expectedArray = {"0.066","0.022","0.028","0.038","0.118","0.015","0.028","0.066","0.085","0","0.013","0.022","0.007","0.072","0.074","0.022","0","0.057","0.068","0.083","0.024","0.011","0.03","0","0.017","0","0.005","0","0","0.003","0","0.003","0.005","0.003","0","0.003","0.019","0","0.003","0.003","0","0","0","0","0.003","0.003","0.003","0","0","0"};
+		String[] expectedArray = {"0.066","0.022","0.028","0.038","0.118","0.015","0.028","0.066","0.085","0","0.013","0.022","0.007","0.072","0.074","0.022","0","0.057","0.068","0.083","0.024","0.011","0.03","0","0.017","0","0","0.005","0","0","0.003","0","0.003","0.005","0.003","0","0.003","0.019","0","0.003","0.003","0","0","0","0","0.003","0.003","0.003","0","0","0"};
 		TextAnalysis testCase = new TextAnalysis(longString);		
 		//act
 		String[] resultArray = testCase.getRelativeFrequency();

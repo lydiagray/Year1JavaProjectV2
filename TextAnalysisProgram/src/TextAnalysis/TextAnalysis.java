@@ -19,7 +19,7 @@ public class TextAnalysis {
 	public int numberOfRecognisedCharacters;
 	public int numberOfUnrecognisedCharacters;
 	public String[] relativeFrequency;
-	public static final char[] characterArray = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', ',', '!', '?', ':', ';', '"','\'', '&', '(', ')', '-', '@', '\\', '/'};
+	public static final char[] characterArray = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', ',', '!', '?', ':', ';', '"','\'', '&', '(', ')', '-', '@', '\\', '/'};
 	
 	
 	//Constructor
@@ -27,11 +27,11 @@ public class TextAnalysis {
 		this.input = userInput.toUpperCase();
 		this.inputAsArray = input.toCharArray();
 		this.inputForDisplay = inputForDisplay(inputAsArray);
-		this.numberOfSpaces = numberOfSpaces(input);
+		this.numberOfSpaces = numberOfSpaces(inputAsArray);
 		this.charsIncludingSpaces = inputAsArray.length;
 		this.charsExcludingSpaces = charsIncludingSpaces - numberOfSpaces;
 		this.numberOfWords = numberOfSpaces + 1;
-		this.characterFrequency = characterFrequency(input, characterArray);
+		this.characterFrequency = characterFrequency(inputAsArray, characterArray);
 		this.highestCount = highestCount(characterFrequency);
 		this.numberOfRecognisedCharacters = numberOfRecognisedCharacters(characterFrequency);
 		this.numberOfUnrecognisedCharacters = numberOfUnrecognisedCharacters(numberOfRecognisedCharacters, charsExcludingSpaces);
@@ -54,33 +54,30 @@ public class TextAnalysis {
 	
 	//Analysis methods
 	
-	public int numberOfSpaces(String input) {
+	public int numberOfSpaces(char[] inputAsArray) {
 		int count = 0;
-		for (char c : input.toCharArray()) {
-			if (c == ' ') {
+		for (int i = 0; i < inputAsArray.length; i++) {
+			if (inputAsArray[i] == ' ') {
 				count++;
 			}
 		}
 		return count;
 	}
 	
-	public int countCharacters(String input, char character) {
-		char[] charArray = input.toCharArray();
-		int count = 0;
-		
-		for (int i = 0; i < charArray.length; i++) {
-			if (character == charArray[i]) {
+	public int countCharacters(char[] inputAsArray, char character) {
+		int count = 0;		
+		for (int i = 0; i < inputAsArray.length; i++) {
+			if (character == inputAsArray[i]) {
 				count++;
 			}
 		}		
 		return count;
 	}
 	
-	public int[] characterFrequency(String str, char[] characterArray) {
-		int[] frequencyValues = new int[50];
-	
+	public int[] characterFrequency(char[] strArray, char[] characterArray) {
+		int[] frequencyValues = new int[51];	
 		for (int i = 0; i < characterArray.length; i++) {
-			frequencyValues[i] = countCharacters(str, characterArray[i]); 
+			frequencyValues[i] = countCharacters(strArray, characterArray[i]); 
 		}		
 		return frequencyValues;
 	}
@@ -109,9 +106,9 @@ public class TextAnalysis {
 	}
 	
 	public String[] relativeFrequency(int[] characterFrequency, int length) {
-		double[] relativeFrequency = new double[50];
-		double[] characterFrequencyDouble = new double[50];
-		String[] formattedRelativeFrequency = new String[50];
+		double[] relativeFrequency = new double[51];
+		double[] characterFrequencyDouble = new double[51];
+		String[] formattedRelativeFrequency = new String[51];
 		for (int i = 0; i < characterFrequency.length; i++) {
 			characterFrequencyDouble[i] = characterFrequency[i];
 		}
@@ -253,8 +250,8 @@ public class TextAnalysis {
 		//Part 2
 		
 		System.out.print("+---------+");
-		for (int i = 26; i < 50; i++) {
-			if (i != 50) {
+		for (int i = 26; i < 51; i++) {
+			if (i != 51) {
 				System.out.print("-----+");
 			}
 			else {
@@ -264,14 +261,14 @@ public class TextAnalysis {
 		System.out.println("");
 		
 		System.out.print("|Character|");
-		for (int i = 26; i < 50; i++) {
+		for (int i = 26; i < 51; i++) {
 			System.out.format("%-5s|", characterArray[i]);
 		}
 		System.out.println("");
 		
 		System.out.print("|         |");
-		for (int i = 26; i < 50; i++) {
-			if (i != 50) {
+		for (int i = 26; i < 51; i++) {
+			if (i != 51) {
 				System.out.print("     |");
 			}
 			else {
@@ -281,8 +278,8 @@ public class TextAnalysis {
 		System.out.println("");
 		
 		System.out.print("+---------+");
-		for (int i = 26; i < 50; i++) {
-			if (i != 50) {
+		for (int i = 26; i < 51; i++) {
+			if (i != 51) {
 				System.out.print("-----+");
 			}
 			else {
@@ -292,14 +289,14 @@ public class TextAnalysis {
 		System.out.println("");
 		
 		System.out.print("|Character|");
-		for (int i = 26; i < 50; i++) {
+		for (int i = 26; i < 51; i++) {
 			System.out.format("%-5s|", characterFrequency[i]);
 		}
 		System.out.println("");
 		
 		System.out.print("|Frequency|");
-		for (int i = 26; i < 50; i++) {
-			if (i != 50) {
+		for (int i = 26; i < 51; i++) {
+			if (i != 51) {
 				System.out.print("     |");
 			}
 			else {
@@ -309,8 +306,8 @@ public class TextAnalysis {
 		System.out.println("");
 		
 		System.out.print("+---------+");
-		for (int i = 26; i < 50; i++) {
-			if (i != 50) {
+		for (int i = 26; i < 51; i++) {
+			if (i != 51) {
 				System.out.print("-----+");
 			}
 			else {
@@ -320,14 +317,14 @@ public class TextAnalysis {
 		System.out.println("");
 		
 		System.out.print("|Relative |");
-		for (int i = 26; i < 50; i++) {
+		for (int i = 26; i < 51; i++) {
 			System.out.format("%-5s|", relativeFrequency[i]);
 		}
 		System.out.println("");
 		
 		System.out.print("|Frequency|");
-		for (int i = 26; i < 50; i++) {
-			if (i != 50) {
+		for (int i = 26; i < 51; i++) {
+			if (i != 51) {
 				System.out.print("     |");
 			}
 			else {
@@ -337,8 +334,8 @@ public class TextAnalysis {
 		System.out.println("");
 		
 		System.out.print("+---------+");
-		for (int i = 26; i < 50; i++) {
-			if (i != 50) {
+		for (int i = 26; i < 51; i++) {
+			if (i != 51) {
 				System.out.print("-----+");
 			}
 			else {
