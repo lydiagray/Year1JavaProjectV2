@@ -113,12 +113,22 @@ public class TextAnalysis {
 			characterFrequencyDouble[i] = characterFrequency[i];
 		}
 		for (int i = 0; i < characterFrequency.length; i++) {
-			relativeFrequency[i] = (characterFrequencyDouble[i] / length);
+			if (length > 0) {
+				relativeFrequency[i] = (characterFrequencyDouble[i] / length);
+			}
+			else {
+				relativeFrequency[i] = 0;
+			}
 		}
 		DecimalFormat df = new DecimalFormat("#.###");
 		df.setRoundingMode(RoundingMode.CEILING);
 		for (int i = 0; i < relativeFrequency.length; i++) {
-		    formattedRelativeFrequency[i] = df.format(relativeFrequency[i]);
+			if (length > 0) {
+				formattedRelativeFrequency[i] = df.format(relativeFrequency[i]);
+			}
+			else {
+				formattedRelativeFrequency[i] = "0";
+			}
 		}
 		
 		return formattedRelativeFrequency;

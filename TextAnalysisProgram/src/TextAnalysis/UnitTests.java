@@ -14,11 +14,10 @@ class UnitTests {
 	public void characterCount_ShouldReturnCorrectCharacterCountForOneLetter_LongString() {
 		// arrange
 		int expectedResult = 14; 
-		// character = 'W';
+		char character = 'W';
 		TextAnalysis testCase = new TextAnalysis(longString);
 		// act
-		int[] resultArray = testCase.getCharacterFrequency();
-		int result = resultArray[22];
+		int result = testCase.countCharacters(testCase.inputAsArray, character);
 		// assert
 		Assert.assertEquals(expectedResult, result);
 	}
@@ -30,7 +29,7 @@ class UnitTests {
 		char character = 'B';
 		TextAnalysis testCase = new TextAnalysis(shortString);
 		//act
-		int result = testCase.countCharacters(shortString.toCharArray(), character);
+		int result = testCase.countCharacters(testCase.inputAsArray, character);
 		//assert
 		Assert.assertEquals(expectedResult, result);
 		
@@ -43,7 +42,7 @@ class UnitTests {
 		char character = ',';
 		TextAnalysis testCase = new TextAnalysis(longString);
 		//act
-		int result = testCase.countCharacters(longString.toCharArray(), character);
+		int result = testCase.countCharacters(testCase.inputAsArray, character);
 		//assert
 		Assert.assertEquals(expectedResult, result);
 		
@@ -56,7 +55,7 @@ class UnitTests {
 		char character = '-';
 		TextAnalysis testCase = new TextAnalysis(shortString);
 		//act
-		int result = testCase.countCharacters(shortString.toCharArray(), character);
+		int result = testCase.countCharacters(testCase.inputAsArray, character);
 		//assert
 		Assert.assertEquals(expectedResult, result);
 		
@@ -69,7 +68,7 @@ class UnitTests {
 		char character = '7';
 		TextAnalysis testCase = new TextAnalysis(longString);
 		//act
-		int result = testCase.countCharacters(longString.toCharArray(), character);
+		int result = testCase.countCharacters(testCase.inputAsArray, character);
 		//assert
 		Assert.assertEquals(expectedResult, result);		
 	}
@@ -81,9 +80,21 @@ class UnitTests {
 		char character = '6';
 		TextAnalysis testCase = new TextAnalysis(shortString);
 		//act
-		int result = testCase.countCharacters(shortString.toCharArray(), character);
+		int result = testCase.countCharacters(testCase.inputAsArray, character);
 		//assert
 		Assert.assertEquals(expectedResult, result);		
+	}
+	
+	@Test
+	public void characterCount_ShouldReturnCorrectCharacterCountForOneCharacter_EmptyString() {
+		//arrange
+		int expectedResult = 0;
+		char character = '"';
+		TextAnalysis testCase = new TextAnalysis("");
+		//act
+		int result = testCase.countCharacters(testCase.inputAsArray, character);
+		//assert
+		Assert.assertEquals(expectedResult, result);
 	}
 	
 	@Test
@@ -106,6 +117,17 @@ class UnitTests {
 		int[] resultArray = testCase.getCharacterFrequency();
 		//assert		
 		Assert.assertEquals(HelperMethods.compareTwoArrays(expectedArray, resultArray), true);		
+	}
+	
+	@Test
+	public void letterFrequencies_ShouldReturnCorrectArrayForEmptyString() {
+		//arrange
+		int[] expectedArray = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+		TextAnalysis testCase = new TextAnalysis("");
+		//act
+		int[] resultArray = testCase.getCharacterFrequency();
+		//assert
+		Assert.assertEquals(HelperMethods.compareTwoArrays(expectedArray, resultArray), true);	
 	}
 	
 	@Test
@@ -151,6 +173,17 @@ class UnitTests {
 		String[] resultArray = testCase.getRelativeFrequency();
 		//assert		
 		Assert.assertEquals(HelperMethods.compareTwoArrays(expectedArray, resultArray), true);		
+	}
+	
+	@Test
+	public void relativeFrequency_ShouldReturnCorrectArrayForEmptyString() {
+		//arrange
+		String[] expectedArray = {"0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"};
+		TextAnalysis testCase = new TextAnalysis("");
+		//act
+		String[] resultArray = testCase.getRelativeFrequency();
+		//assert
+		Assert.assertEquals(HelperMethods.compareTwoArrays(expectedArray, resultArray), true);	
 	}
 	
 	@Test
