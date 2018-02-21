@@ -67,6 +67,7 @@ public class HelperMethods {
 	    	display = sc.nextInt();
 	    	if (display == 1) {
 	    		HelperMethods.fullAnalysisDisplay(textAnalysis);
+	    		display = 0;
 	    	}
 	    	else if (display == 2) {
 	    		System.out.println(textAnalysis.toString());

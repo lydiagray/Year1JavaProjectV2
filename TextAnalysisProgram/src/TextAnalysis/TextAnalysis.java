@@ -366,7 +366,10 @@ public class TextAnalysis {
 	
 	public void barChartFrequencies(int[] characterFrequency, char[] characterArray, int count) {
 	
-		System.out.println("\n Number of character occurances");
+		if (count == 0) {
+			count = 5;
+		}
+		System.out.println("\n Number of character occurences");
 
 		for (int i = count; i > 0; i--) {
 			if (i < 10) {
