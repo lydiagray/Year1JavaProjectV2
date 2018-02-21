@@ -30,7 +30,7 @@ public class TextAnalysis {
 		this.numberOfSpaces = numberOfSpaces(inputAsArray);
 		this.charsIncludingSpaces = inputAsArray.length;
 		this.charsExcludingSpaces = charsIncludingSpaces - numberOfSpaces;
-		this.numberOfWords = numberOfSpaces + 1;
+		this.numberOfWords = numberOfWords(numberOfSpaces);
 		this.characterFrequency = characterFrequency(inputAsArray, characterArray);
 		this.highestCount = highestCount(characterFrequency);
 		this.numberOfRecognisedCharacters = numberOfRecognisedCharacters(characterFrequency);
@@ -62,6 +62,15 @@ public class TextAnalysis {
 			}
 		}
 		return count;
+	}
+	
+	public int numberOfWords(int numberOfSpaces) {
+		if (numberOfSpaces == 0) {
+			return 0;
+		}
+		else {
+			return numberOfSpaces + 1;
+		}
 	}
 	
 	public int countCharacters(char[] inputAsArray, char character) {
@@ -168,7 +177,7 @@ public class TextAnalysis {
 				System.out.print("-----+");
 			}
 			else {
-				System.out.print("-----+");
+				System.out.println("-----+");
 			}
 		}
 		System.out.println("");

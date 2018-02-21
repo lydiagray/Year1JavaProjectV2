@@ -24,6 +24,8 @@ public class Main {
 						System.out.println("Please enter the text you would like to analyse:");
 						Scanner textScanner = new Scanner(System.in);
 						input = textScanner.nextLine();
+						TextAnalysis textAnalysis = new TextAnalysis(input);
+				    	HelperMethods.displayInterface(textAnalysis);
 					}
 					else if(inputType == 2) {
 						System.out.println("Please enter the full location of the .txt file including the path e.g. C\\code\\text.txt:");
@@ -31,26 +33,26 @@ public class Main {
 						String location = locationScanner.nextLine();
 						try {
 							input = HelperMethods.convertTextFile(location);
+							TextAnalysis textAnalysis = new TextAnalysis(input);
+					    	HelperMethods.displayInterface(textAnalysis);
 						} catch (Exception e) {
-							// TODO Auto-generated catch block
 							System.out.println("Something went wrong, please try again");
 						}
-					}
-				
-					else if (inputType > 2) {
+					}				
+					else if (inputType == 0) {
+						break;
+					}					
+					else {
 						System.out.println("You must enter 1, 2 or 0 only");
-					}
-				
-				} while (inputType > 2);
-		    	TextAnalysis textAnalysis = new TextAnalysis(input);
-		    	HelperMethods.displayInterface(textAnalysis);
+					}				
+				} while (inputType > 2 || inputType < 0);		    	
 		    		
 			}
 			else if (programMode == 2) {
 				do {
+					System.out.println("Demo mode");
 					System.out.println("Would you like to see a demo of:\n1: A short piece of text\n2: A long piece of text\n0: Return to the main menu");
 					demo = sc.nextInt();
-					System.out.println("Demo mode");
 					if (demo == 1) {
 				    	TextAnalysis textAnalysis = new TextAnalysis(UnitTests.shortString);
 						HelperMethods.displayInterface(textAnalysis);
@@ -59,10 +61,13 @@ public class Main {
 				    	TextAnalysis textAnalysis = new TextAnalysis(UnitTests.longString);
 				    	HelperMethods.displayInterface(textAnalysis);
 					}
+					else if (demo == 0) {
+						break;
+					}
 					else {
 						System.out.println("You must select 1, 2 or 0");
 					}
-				} while (demo != 1 && demo != 2);
+				} while (demo > 2 || demo < 0);
 			}
 			else if (programMode == 0) {
 				System.out.println("Thank you for using the LG Text Analysis Program\r\nGoodbye");
