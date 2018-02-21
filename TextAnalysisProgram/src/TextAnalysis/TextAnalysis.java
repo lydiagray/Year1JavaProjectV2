@@ -152,11 +152,11 @@ public class TextAnalysis {
 	}
 	
 	public String toString() {
-		return "\nThe text you are analysing is :\n\n" + inputForDisplay + "\n\nIt contains " 
-				+ numberOfWords + " words and " + numberOfSpaces + " spaces.\nIncluding spaces it is " 
-				+ charsIncludingSpaces + " characters long, and without spaces it is " + charsExcludingSpaces 
-				+ " characters long.\n" + numberOfRecognisedCharacters + " characters were recognised and have been analysed, and " 
-				+ numberOfUnrecognisedCharacters + " characters were unrecognised by the program.\n";
+		return "\nThe text you are analysing is :\n\n" + inputForDisplay + "\n\nNumber of words: " 
+				+ numberOfWords + "\nNumber of spaces: " + numberOfSpaces + "\nTotal characters including spaces: " 
+				+ charsIncludingSpaces + "\nTotal characters excluding spaces: " + charsExcludingSpaces 
+				+ "\nTotal number of recognised characters: " + numberOfRecognisedCharacters + "\nTotal number of unrecognised characters: " 
+				+ numberOfUnrecognisedCharacters + "\n";
 	}
 	
 	public void displayFrequencies(int[] characterFrequency, char[] characterArray, String[] relativeFrequency) {
