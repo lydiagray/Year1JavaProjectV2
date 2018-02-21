@@ -398,7 +398,7 @@ public class TextAnalysis {
 			}
 			System.out.println("");
 		}
-		System.out.println("========================================================================================================");
+		System.out.println("==========================================================================================================");
 		System.out.print("   |");
 		for (int i = 0; i < characterArray.length; i++) {
 			System.out.print(characterArray[i] + " ");
