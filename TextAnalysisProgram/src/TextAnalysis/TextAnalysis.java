@@ -170,195 +170,202 @@ public class TextAnalysis {
 	
 	public void displayFrequencies(int[] characterFrequency, char[] characterArray, String[] relativeFrequency) {
 		//Part 1
+		String leftColumnTopBottom = "+---------+";
+		String columnTopBottom = "-----+";
+		String character = "|Character|";
+		String frequency = "|Frequency|";
+		String relative = "|Relative |";
+		String leftColumnSpace = "|         |";
+		String columnSpace = "     |";
 		
-		System.out.print("+---------+");
+		System.out.print(leftColumnTopBottom);
 		for (int i = 0; i < 26; i++) {
 			if (i != 26) {
-				System.out.print("-----+");
+				System.out.print(columnTopBottom);
 			}
 			else {
-				System.out.println("-----+");
+				System.out.println(columnTopBottom);
 			}
 		}
 		System.out.println("");
 		
-		System.out.print("|Character|");
+		System.out.print(character);
 		for (int i = 0; i < 26; i++) {
 			System.out.format("%-5s|", characterArray[i]);
 		}
 		System.out.println("");
 		
-		System.out.print("|         |");
+		System.out.print(leftColumnSpace);
 		for (int i = 0; i < 26; i++) {
 			if (i != 26) {
-				System.out.print("     |");
+				System.out.print(columnSpace);
 			}
 			else {
-				System.out.println("     |");
+				System.out.println(columnSpace);
 			}
 		}
 		System.out.println("");
 		
-		System.out.print("+---------+");
+		System.out.print(leftColumnTopBottom);
 		for (int i = 0; i < 26; i++) {
 			if (i != 26) {
-				System.out.print("-----+");
+				System.out.print(columnTopBottom);
 			}
 			else {
-				System.out.println("-----+");
+				System.out.println(columnTopBottom);
 			}
 		}
 		System.out.println("");
 		
-		System.out.print("|Character|");
+		System.out.print(character);
 		for (int i = 0; i < 26; i++) {
 			System.out.format("%-5s|", characterFrequency[i]);
 		}
 		System.out.println("");
 		
-		System.out.print("|Frequency|");
+		System.out.print(frequency);
 		for (int i = 0; i < 26; i++) {
 			if (i != 26) {
-				System.out.print("     |");
+				System.out.print(columnSpace);
 			}
 			else {
-				System.out.println("     |");
+				System.out.println(columnSpace);
 			}
 		}
 		System.out.println("");
 		
-		System.out.print("+---------+");
+		System.out.print(leftColumnTopBottom);
 		for (int i = 0; i < 26; i++) {
 			if (i != 26) {
-				System.out.print("-----+");
+				System.out.print(columnTopBottom);
 			}
 			else {
-				System.out.println("-----+");
+				System.out.println(columnTopBottom);
 			}
 		}
 		System.out.println("");
 		
-		System.out.print("|Relative |");
+		System.out.print(relative);
 		for (int i = 0; i < 26; i++) {
 			System.out.format("%-5s|", relativeFrequency[i]);
 		}
 		System.out.println("");
 		
-		System.out.print("|Frequency|");
+		System.out.print(frequency);
 		for (int i = 0; i < 26; i++) {
 			if (i != 26) {
-				System.out.print("     |");
+				System.out.print(columnSpace);
 			}
 			else {
-				System.out.println("     |");
+				System.out.println(columnSpace);
 			}
 		}
 		System.out.println("");
 		
-		System.out.print("+---------+");
+		System.out.print(leftColumnTopBottom);
 		for (int i = 0; i < 26; i++) {
 			if (i != 26) {
-				System.out.print("-----+");
+				System.out.print(columnTopBottom);
 			}
 			else {
-				System.out.println("-----+");
+				System.out.println(columnTopBottom);
 			}
 		}
 		System.out.println("");
 		
 		//Part 2
 		
-		System.out.print("+---------+");
+		System.out.print(leftColumnTopBottom);
 		for (int i = 26; i < 51; i++) {
 			if (i != 51) {
-				System.out.print("-----+");
+				System.out.print(columnTopBottom);
 			}
 			else {
-				System.out.println("-----+");
+				System.out.println(columnTopBottom);
 			}
 		}
 		System.out.println("");
 		
-		System.out.print("|Character|");
+		System.out.print(character);
 		for (int i = 26; i < 51; i++) {
 			System.out.format("%-5s|", characterArray[i]);
 		}
 		System.out.println("");
 		
-		System.out.print("|         |");
+		System.out.print(leftColumnSpace);
 		for (int i = 26; i < 51; i++) {
 			if (i != 51) {
-				System.out.print("     |");
+				System.out.print(columnSpace);
 			}
 			else {
-				System.out.println("     |");
+				System.out.println(columnSpace);
 			}
 		}
 		System.out.println("");
 		
-		System.out.print("+---------+");
+		System.out.print(leftColumnTopBottom);
 		for (int i = 26; i < 51; i++) {
 			if (i != 51) {
-				System.out.print("-----+");
+				System.out.print(columnTopBottom);
 			}
 			else {
-				System.out.println("-----+");
+				System.out.println(columnTopBottom);
 			}
 		}
 		System.out.println("");
 		
-		System.out.print("|Character|");
+		System.out.print(character);
 		for (int i = 26; i < 51; i++) {
 			System.out.format("%-5s|", characterFrequency[i]);
 		}
 		System.out.println("");
 		
-		System.out.print("|Frequency|");
+		System.out.print(frequency);
 		for (int i = 26; i < 51; i++) {
 			if (i != 51) {
-				System.out.print("     |");
+				System.out.print(columnSpace);
 			}
 			else {
-				System.out.println("     |");
+				System.out.println(columnSpace);
 			}
 		}
 		System.out.println("");
 		
-		System.out.print("+---------+");
+		System.out.print(leftColumnTopBottom);
 		for (int i = 26; i < 51; i++) {
 			if (i != 51) {
-				System.out.print("-----+");
+				System.out.print(columnTopBottom);
 			}
 			else {
-				System.out.println("-----+");
+				System.out.println(columnTopBottom);
 			}
 		}
 		System.out.println("");
 		
-		System.out.print("|Relative |");
+		System.out.print(relative);
 		for (int i = 26; i < 51; i++) {
 			System.out.format("%-5s|", relativeFrequency[i]);
 		}
 		System.out.println("");
 		
-		System.out.print("|Frequency|");
+		System.out.print(frequency);
 		for (int i = 26; i < 51; i++) {
 			if (i != 51) {
-				System.out.print("     |");
+				System.out.print(columnSpace);
 			}
 			else {
-				System.out.println("     |");
+				System.out.println(columnSpace);
 			}
 		}
 		System.out.println("");
 		
-		System.out.print("+---------+");
+		System.out.print(leftColumnTopBottom);
 		for (int i = 26; i < 51; i++) {
 			if (i != 51) {
-				System.out.print("-----+");
+				System.out.print(columnTopBottom);
 			}
 			else {
-				System.out.println("-----+");
+				System.out.println(columnTopBottom);
 			}
 		}
 		System.out.println("");
@@ -366,10 +373,10 @@ public class TextAnalysis {
 	
 	public void barChartFrequencies(int[] characterFrequency, char[] characterArray, int count) {
 	
-		if (count == 0) {
+		if (count < 5) {
 			count = 5;
 		}
-		System.out.println("\n Number of character occurences");
+		System.out.println("\n Number of character occurrences");
 
 		for (int i = count; i > 0; i--) {
 			if (i < 10) {
