@@ -98,7 +98,7 @@ class UnitTests {
 	}
 	
 	@Test
-	public void letterFrequencies_ShouldReturnCorrectArrayForShortString() {
+	public void characterFrequencies_ShouldReturnCorrectArrayForShortString() {
 		//arrange
 		int[] expectedArray = {2,0,0,0,0,0,1,6,6,0,0,0,0,1,1,0,0,2,7,6,0,0,2,0,1,0,1,0,0,1,0,0,3,1,0,2,1,1,1,1,0,0,0,0,0,1,1,0,0,0,0};
 		TextAnalysis testCase = new TextAnalysis(shortString);
@@ -109,7 +109,7 @@ class UnitTests {
 	}
 	
 	@Test
-	public void letterFrequencies_ShouldReturnCorrectArrayForLongString() {
+	public void characterFrequencies_ShouldReturnCorrectArrayForLongString() {
 		//arrange
 		int[] expectedArray = {31,10,13,18,56,7,13,31,40,0,6,10,3,34,35,10,0,27,32,39,11,5,14,0,8,0,0,2,0,0,1,0,1,2,1,0,1,9,0,1,1,0,0,0,0,1,1,1,0,0,0};
 		TextAnalysis testCase = new TextAnalysis(longString);
@@ -120,7 +120,7 @@ class UnitTests {
 	}
 	
 	@Test
-	public void letterFrequencies_ShouldReturnCorrectArrayForEmptyString() {
+	public void characterFrequencies_ShouldReturnCorrectArrayForEmptyString() {
 		//arrange
 		int[] expectedArray = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 		TextAnalysis testCase = new TextAnalysis("");
@@ -148,6 +148,50 @@ class UnitTests {
 		TextAnalysis testCase = new TextAnalysis(longString);
 		//act
 		int result = testCase.getNumberOfSpaces();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void numberOfSpaces_ShouldReturnZeroForAnEmptyString() {
+		//arrange
+		int expectedResult = 0;
+		TextAnalysis testCase = new TextAnalysis("");
+		//act
+		int result = testCase.getNumberOfSpaces();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void numberOfWords_ShouldReturnCorrectNumberOfWordsForShortString() {
+		//arrange
+		int expectedResult = 11;
+		TextAnalysis testCase = new TextAnalysis(shortString);
+		//act
+		int result = testCase.getNumberOfWords();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void numberOfWords_ShouldReturnCorrectNumberOfWordsForLongString() {
+		//arrange
+		int expectedResult = 111;
+		TextAnalysis testCase = new TextAnalysis(longString);
+		//act
+		int result = testCase.getNumberOfWords();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void numberOfWords_ShouldReturnZeroForAnEmptyString() {
+		//arrange
+		int expectedResult = 0;
+		TextAnalysis testCase = new TextAnalysis("");
+		//act
+		int result = testCase.getNumberOfWords();
 		//assert
 		Assert.assertEquals(expectedResult, result);
 	}
@@ -209,6 +253,17 @@ class UnitTests {
 	}
 	
 	@Test
+	public void highestCount_ShouldReturnZeroForEmptyString() {
+		//arrange
+		int expectedResult = 0;
+		TextAnalysis testCase = new TextAnalysis("");
+		//act
+		int result = testCase.getHighestCount();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
 	public void charsIncludingSpaces_ShouldReturnTotalLengthOfShortString() {
 		//arrange
 		int expectedResult = 59;
@@ -224,6 +279,17 @@ class UnitTests {
 		//arrange
 		int expectedResult = 585;
 		TextAnalysis testCase = new TextAnalysis(longString);
+		//act
+		int result = testCase.getCharsIncludingSpaces();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void charsIncludingSpaces_ShouldReturnZeroForEmptyString() {
+		//arrange
+		int expectedResult = 0;
+		TextAnalysis testCase = new TextAnalysis("");
 		//act
 		int result = testCase.getCharsIncludingSpaces();
 		//assert
@@ -253,10 +319,32 @@ class UnitTests {
 	}
 	
 	@Test
-	public void numberOfRecognisedCharacters() {
+	public void charsExcludingSpaces_ShouldReturnZeroForEmptyString() {
+		//arrange
+		int expectedResult = 0;
+		TextAnalysis testCase = new TextAnalysis("");
+		//act
+		int result = testCase.getCharsExcludingSpaces();
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void numberOfRecognisedCharacters_ShouldReturnTotalOfCharacterFrequencyArrayForVarietyString() {
 		//arrange
 		int expectedResult = 71;
 		TextAnalysis testCase = new TextAnalysis(varietyString);
+		//act
+		int result = testCase.getNumberOfRecognisedCharacters();		
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void numberOfRecognisedCharacters_ShouldReturnZeroForEmptyString() {
+		//arrange
+		int expectedResult = 0;
+		TextAnalysis testCase = new TextAnalysis("");
 		//act
 		int result = testCase.getNumberOfRecognisedCharacters();		
 		//assert
@@ -270,6 +358,17 @@ class UnitTests {
 		TextAnalysis testCase = new TextAnalysis(varietyString);
 		//act
 		int result = testCase.getNumberOfUnrecognisedCharacters();		
+		//assert
+		Assert.assertEquals(expectedResult, result);
+	}
+	
+	@Test
+	public void numberOfUnrecognisedCharacters_ShouldReturnZeroForEmptyString() {
+		//arrange
+		int expectedResult = 0;
+		TextAnalysis testCase = new TextAnalysis("");
+		//act
+		int result = testCase.getNumberOfRecognisedCharacters();		
 		//assert
 		Assert.assertEquals(expectedResult, result);
 	}
