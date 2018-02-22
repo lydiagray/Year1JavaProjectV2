@@ -1,4 +1,5 @@
 package TextAnalysis;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Main {
@@ -31,12 +32,13 @@ public class Main {
 						System.out.println("Please enter the full location of the .txt file including the path e.g. C\\code\\text.txt:");
 						Scanner locationScanner = new Scanner(System.in);
 						String location = locationScanner.nextLine();
-						try {
-							input = HelperMethods.convertTextFile(location);
+						input = HelperMethods.convertTextFile(location);
+						if (input != "") {							
 							TextAnalysis textAnalysis = new TextAnalysis(input);
 					    	HelperMethods.displayInterface(textAnalysis);
-						} catch (Exception e) {
+						} else {
 							System.out.println("Something went wrong, please try again");
+							inputType = -1;
 						}
 					}				
 					else if (inputType == 0) {

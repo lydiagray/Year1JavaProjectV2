@@ -1,8 +1,13 @@
 package TextAnalysis;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import java.io.FileNotFoundException;
+
 import org.junit.Assert;
 
 import org.junit.jupiter.api.Test;
+import org.junit.platform.engine.support.hierarchical.SingleTestExecutor.Executable;
 
 class UnitTests {
 
@@ -372,5 +377,14 @@ class UnitTests {
 		//assert
 		Assert.assertEquals(expectedResult, result);
 	}
+	
+//	@Test
+//	public void convertTextFile_ShouldThrowException() {
+//		//arrange
+//		String filename = "testfile.txt";
+//		Executable convertTextFileTest = () -> {HelperMethods.convertTextFile(filename);};
+//		//act
+//		assertThrows(FileNotFoundException.class, convertTextFileTest);
+//	}
 	
 }
